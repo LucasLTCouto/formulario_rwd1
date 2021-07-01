@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    form {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        max-width: 500px;
+        padding: 5px;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(255, 255, 255);
+    }
+    .fundo {
+        background-image: linear-gradient(#300505, red);
+        height: 100vh;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    .container {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 15px;
+}
+    p {
+        padding: 5px;
+    }
+    .enviar {
+        margin-top: 5px;
+        height: 30px;
+        width: 60px;
+    }
+    input {
+        height: 20px;
+    }
+</style>
+
+<body>
+<div class="fundo">
+    <h1>Formulario</h1>
+    <div class="container">
+    <form name="meu_form">
+        <h1> Preencha seus dados</h1>
+
+        <p>Nome</p><input type="text" id="nomeid" placeholder="Lucas Couto" required="required" name="nome" />
+        <br>
+        <p>Email</p> <input type="email" id="emailid" placeholder="exemplo@exemplo.com.br" required="required" name="email" />
+        <br>
+        <p>Fone</p> <input type="tel" id="foneid" placeholder="(xx) 9xxxx-xxxx" required="required" name="tel" />
+        <br>
+        <p>Endereço</p> <input type="text" id="enderecoid" placeholder="Rua xxxx, ap xx" required="required" name="endereco" />
+        <br>
+
+        <input type="submit" class="enviar" onclick="Enviar();" value="Enviar"/>
+
+    </form>
+    </div>
+</div>
+    
+</body>
+<script>
+    function Enviar() {
+        var nome = document.getElementById("nomeid");
+        var email = document.getElementById("emailid");
+
+        if (nome.value != "") {
+            alert ('Obrigado sr(a) ' +nome.value + '! Os seus dados foram encaminhados com sucesso, e caso seja aprovado, entraremos em contato em seu email ' +email.value +'')
+        }
+
+    }
+</script>
+</html>
